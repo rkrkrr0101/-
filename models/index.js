@@ -2,7 +2,10 @@ const Sequelize = require("sequelize");
 const Data = require("./data");
 
 const env = process.env.NODE_ENV || "development";
+require("dotenv").config();
+
 const config = require("../config/config")[env];
+
 const db = {};
 
 const sequelize = new Sequelize(
