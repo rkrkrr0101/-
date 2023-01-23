@@ -12,3 +12,4 @@ GAN/gans-in-action-master.zip
 **/.env
 .env
 **/uploads/
+/coverage
