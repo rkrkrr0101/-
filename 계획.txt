@@ -25,32 +25,51 @@ html만들고   /완료
 리팩토링
 	service repository //굳이 액티브레코드로 된걸 또 다시 데이터매퍼로 바꾸는게 맞는건가??//일단 목표가 스프링di구현이었으니 해보긴하자 이게 도메인이랑 메소드가 붙어있는게 맞는건지 아닌지는 잘모르겠다//완료
 	di//완료
-	ioc//완료
+	ioc//스킵
 	싱글톤?//이건 직접구현하려면어케하지 각각 객체하나마다 다 싱글톤으로 만들어줘야하나? 개귀찮을거같은데 안할래 애초에 그러면 dip도 깨지지않나? di프레임워크들이야 컨테이너로 지들이 해주니까 상관없지만
 	route 하나로 합치기//구현은 해뒀는데 합치는게 맞나?
 	route log 이름변경
-	db id bigint
+	db id bigint //할필요있을까 계산기돌려보면 절대 저만큼못쌓을거같은데
 
 
+insert into namu_log(na_time, na_one, na_two,na_three,na_four,na_five,na_six,na_seven,na_eight,na_nine,na_ten) (select na_time, na_one, na_two,na_three,na_four,na_five,na_six,na_seven,na_eight,na_nine,na_ten from namu_log);
+데이터복제 쿼리(서브쿼리로 현재테이블 불러오니까 현재테이블을 2배로 불림)
+
+explain select * from namu_log
+order by na_time DESC LIMIT 288
+;
+테스트쿼리
 
 
 테스트작성  //일단 완료,통합테스트까지 넣긴 귀찮다
 스트레스테스트 //완료  npx artillery run test/stresstest/loadtest.json
 
+kindError 에러코드 400에 넣기//완료
+
 db테스트데이터 변경
 리드미 작성
 	뭐하는건지
 	사용방법안내
-	api 안내(입출력 api response),postman기반으로
+	api 안내(입출력 api response),postman로 받아서 결과값올리면되겠네
 
 나무크롤 리드미
-	스크립트형태(분리예정)
+	스크립트형태(분리할까?)
 	
+네이버 실시간 검색어의 폐지 이후,현재 뜨는 검색어를 쉽게 알아볼수있는 사이트가 몇개 남지않았음
+그 몇 안되는것중 하나가 나무위키인데,나무위키의 실시간 검색어는 변동이 너무 빨라서,
+시간단위,일단위의 검색량을 알아보기엔 적합하지 않음
+그래서 나무위키의 데이터를 모아,일단위 주단위로 값을 뽑아내는 사이트를 만들게됐음
 
+todo리스트를 만들고,순서대로 구현
 
 
 추가할만한거
 day단위로 로그긁어서 daylog에 넣고 원하는날짜 or 비트윈검색
+어짜피 날짜단위면 하루1개,1년 365개 10년 3650개니까 인덱스도 필요없을거같고
+기존 크롤링스크립트에 0시면 day만 daylog에 넣는식으로 넣으면될거같긴하다
+
+서버쪽에선 날짜두개받아서(같은날짜면 그날만) 그사이에있는거 다 받고 
+크롤링에서 점수매기는방식으로 매겨서 json으로 리턴하면될듯?
 
 사용한거
 크롤링

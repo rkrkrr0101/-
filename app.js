@@ -9,7 +9,7 @@ const logrouter = require("./routes/logs");
 
 const app = express();
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 7982);
 app.set("view engine", "html");
 nunjucks.configure(__dirname + "/views", {
   express: app,
@@ -37,6 +37,16 @@ app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url}  라우터없음`);
   error.status = 404;
   next(error);
+});
+
+app.use((err, req, res, next) => {
+  if (err.name != "kindError") {
+    next(error);
+  }
+  res.locals.message = err.message;
+  res.locals.error = process.env.NODE_ENV !== "production" ? err : {};
+  res.status(err.status || 400);
+  res.render("error");
 });
 
 app.use((err, req, res, next) => {

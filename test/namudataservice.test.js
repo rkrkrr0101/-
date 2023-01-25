@@ -81,7 +81,7 @@ describe("서비스의 findWhere", () => {
     });
     //w
     //t
-    const exceptionkind = "dayar";
+    const exceptionkind = "dayars";
     await expect(async () => {
       await namudataservice.findKind(exceptionkind);
     }).rejects.toThrowError(
