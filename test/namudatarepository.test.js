@@ -1,4 +1,4 @@
-const NamuDataRepository = require("../repository/namuDataRepository");
+const NamuDataRepository = require("../namudatas/namuDataRepository");
 
 const data = [
   {

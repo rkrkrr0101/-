@@ -1,5 +1,5 @@
-const NamuDataRepository = require("./repository/namuDataRepository");
-const NamuDataService = require("./service/namudataservice");
+const NamuDataRepository = require("./namudatas/namuDataRepository");
+const NamuDataService = require("./namudatas/namudataservice");
 const Data = require("./models/data");
 
 data = Data;

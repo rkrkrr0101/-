@@ -1,4 +1,4 @@
-const NamuDataService = require("../service/namudataservice");
+const NamuDataService = require("../namudatas/namudataservice");
 const KindError = require("../exception/kinderror");
 
 const data = [

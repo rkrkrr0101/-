@@ -9,7 +9,7 @@ const logrouter = require("./routes/logs");
 
 const app = express();
 
-app.set("port", process.env.PORT || 7982);
+app.set("port", process.env.PORT || 3000);
 app.set("view engine", "html");
 nunjucks.configure(__dirname + "/views", {
   express: app,
