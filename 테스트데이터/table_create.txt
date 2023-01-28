@@ -1,0 +1,33 @@
+CREATE TABLE `namu_data` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nd_one` varchar(45) DEFAULT NULL,
+  `nd_two` varchar(45) DEFAULT NULL,
+  `nd_three` varchar(45) DEFAULT NULL,
+  `nd_four` varchar(45) DEFAULT NULL,
+  `nd_five` varchar(45) DEFAULT NULL,
+  `nd_six` varchar(45) DEFAULT NULL,
+  `nd_seven` varchar(45) DEFAULT NULL,
+  `nd_eight` varchar(45) DEFAULT NULL,
+  `nd_nine` varchar(45) DEFAULT NULL,
+  `nd_ten` varchar(45) DEFAULT NULL,
+  `nd_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nd_kind` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `namu_log` (
+  `na_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `na_one` varchar(45) DEFAULT NULL,
+  `na_two` varchar(45) DEFAULT NULL,
+  `na_three` varchar(45) DEFAULT NULL,
+  `na_four` varchar(45) DEFAULT NULL,
+  `na_five` varchar(45) DEFAULT NULL,
+  `na_six` varchar(45) DEFAULT NULL,
+  `na_seven` varchar(45) DEFAULT NULL,
+  `na_eight` varchar(45) DEFAULT NULL,
+  `na_nine` varchar(45) DEFAULT NULL,
+  `na_ten` varchar(45) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `na_time` (`na_time`)
+) ENGINE=InnoDB AUTO_INCREMENT=65532 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
