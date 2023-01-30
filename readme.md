@@ -14,7 +14,7 @@
 
 프로젝트 내에서는k8s를 사용해서,configmap을 사용해서 env를 넣었음(기밀정보기때문에 따로관리중),
 
-k8s가 없으면 도커파일로 env를 넣어야하고,
+k8s가 없으면 도커파일로 env를 넣어야하고,mysql도 연결해야하는데 복잡하니까 그냥 실행시키는것만 리드미에 넣어둠
 
 k8s를 사용할거면 테스트데이터/dbconfig.yaml 컨피그맵 데이터를 완성해서 k8s에 넣어둬야함
 
@@ -28,8 +28,6 @@ db테이블생성은 테스트데이터/table_create.txt 참고해서 생성하�
 
 # 프로젝트 실행법
 
-도커파일없이 실행
-
 1.config변경
 
 2.db테이블 생성
@@ -37,18 +35,6 @@ db테이블생성은 테스트데이터/table_create.txt 참고해서 생성하�
 3.npm install
 
 4.npm start
-
----
-
-도커파일로 실행
-
-1.config변경
-
-2.db테이블 생성
-
-3.docker build -t namusearch/namusearch:1.0.0 .
-
-4.docker이미지 실행
 
 ---
 
@@ -82,7 +68,7 @@ https://github.com/rkrkrr0101/namucrol
 
 ---
 
-상세 제작로그는 계획.txt참조
+제작로그,만들면서 들었던 생각 등 자질구레한건 계획.txt참조
 
 ---
 
